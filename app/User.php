@@ -29,4 +29,16 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password',
     ];
+
+    protected $dates = [];
+
+    /**
+     * validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        "name" => "required",
+        "age" => "integer|min:13",
+    ];
 }
